@@ -1,4 +1,4 @@
-function[]=vis3D_collision(A)
+function[]=vis3D_collision(A,alpha,color)
 
 % This function is used to plot 3D array showtest path distance A
 for i = 1 : size(A,1)
@@ -6,7 +6,7 @@ for i = 1 : size(A,1)
         for k = 1 : size(A,3)
             if A(i,j,k)== -2
                 % offset by -0.5 to center on axis gridlines
-                voxel( [i - 0.5, j - 0.5, k - 0.5], [1, 1, 1], 'red', 0.2);
+                voxel( [i - 0.5, j - 0.5, k - 0.5], [1, 1, 1], color, alpha);
                 %voxel( [i - 1, j - 1, k - 1], [1, 1, 1], 'red', 0.05);
             end
         end

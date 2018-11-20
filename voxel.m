@@ -54,10 +54,10 @@ for n=1:3,
     x(3,:)=x(4,:);
     x(4,:)=temp;
     h=patch(x(1:4,1),x(1:4,2),x(1:4,3),c);
-    set(h,'FaceAlpha',alpha*0.8);set(h,'EdgeAlpha',alpha);
+    set(h,'FaceAlpha',alpha*0.9);set(h,'EdgeAlpha',alpha);
     temp=x(7,:);
     x(7,:)=x(8,:);
     x(8,:)=temp;
     h=patch(x(5:8,1),x(5:8,2),x(5:8,3),c);
-    set(h,'FaceAlpha',alpha*0.8);set(h,'EdgeAlpha',alpha);
+    set(h,'FaceAlpha',alpha*0.9);set(h,'EdgeAlpha',alpha);
 end;

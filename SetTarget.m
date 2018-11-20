@@ -6,9 +6,9 @@ function [targetXYZ]=SetTarget(startXYZ,A,theta_points)
                    [200, 200, figuresize(1), figuresize(2)]);
         subplot(4, 4, [5, 6, 7, 9, 10, 11, 13, 14, 15] );
         title('Configuration Space (Obstacles only)');
-        vis3D_collision(A);
+        vis3D_collision(A,0.2,'red');
         %subplot(4, 1, 1);
-        ; % where you start (change to current position later
+        % where you start (change to current position later
         voxel( [startXYZ(1) - 0.5, startXYZ(2) - 0.5, startXYZ(3) - 0.5],...
                    [1, 1, 1], 'green', 0.75);       
         pos = -2;
@@ -100,11 +100,11 @@ function [targetXYZ]=SetTarget(startXYZ,A,theta_points)
             % check that targetXYZ is an obstacle!
             pos=A(targetXYZ(1), targetXYZ(2), targetXYZ(3));
             %if (A(targetXYZ(1), targetXYZ(2), targetXYZ(3) ) == -2)
-            disp('target is an obstacle!'), pause(1);   %%% How to make it display in the current window?
-
+            if pos==-2
+            disp('target is an obstacle!');   %%% How to make it display in the current window?
+            end
                 %voxel( [targetXYZ(1) - 0.5, targetXYZ(2) - 0.5, targetXYZ(3) - 0.5],...
                        %[1, 1, 1], 'black', 0.75);
-
                 %return;
                 %continue;
             %end
@@ -144,6 +144,7 @@ function [targetXYZ]=SetTarget(startXYZ,A,theta_points)
     
 
 voxel( [targetXYZ(1) - 0.5, targetXYZ(2) - 0.5, targetXYZ(3) - 0.5],...
-           [1, 1, 1], 'blue', 0.75);       
+           [1, 1, 1], 'blue', 0.75);
+disp('Valid input');
 drawnow;
 end
