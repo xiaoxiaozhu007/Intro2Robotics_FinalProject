@@ -48,7 +48,8 @@ while qP <= qE
              (distanceBFS(pt(1), pt(2) + 1, pt(3) ) > (dist + 1) ) )
              qE = qE + 1;
              queue(qE, :) = [pt(1), pt(2) + 1, pt(3)];
-             distanceBFS(pt(1), pt(2) + 1, pt(3) ) = dist + 1;            
+             %distanceBFS(pt(1), pt(2) + 1, pt(3) ) = dist + 2;
+             distanceBFS(pt(1), pt(2) + 1, pt(3) ) = dist + 1;  
         end
     end
     
@@ -58,7 +59,8 @@ while qP <= qE
              (distanceBFS(pt(1), pt(2) - 1, pt(3) ) > (dist + 1) ) )
              qE = qE + 1;
              queue(qE, :) = [pt(1), pt(2) - 1, pt(3)];
-             distanceBFS(pt(1), pt(2) - 1, pt(3) ) = dist + 1;            
+             %distanceBFS(pt(1), pt(2) - 1, pt(3) ) = dist + 2;
+             distanceBFS(pt(1), pt(2) - 1, pt(3) ) = dist + 1;
         end
     end
     

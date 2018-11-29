@@ -6,7 +6,8 @@ function [targetXYZ]=SetTarget(startXYZ,A,theta_points)
                    [200, 200, figuresize(1), figuresize(2)]);
         subplot(4, 4, [5, 6, 7, 9, 10, 11, 13, 14, 15] );
         title('Configuration Space (Obstacles only)');
-        vis3D_collision(A,0.2,'red');
+        %vis3D_collision(A,0.2,'red');
+        vis3D_collision_scat(A,0.2,'red');
         %subplot(4, 1, 1);
         % where you start (change to current position later
         voxel( [startXYZ(1) - 0.5, startXYZ(2) - 0.5, startXYZ(3) - 0.5],...

@@ -84,30 +84,6 @@ O4.Faces = F_ALL;
 O4.FaceVertexCData = jet(size(obst4_V,1));
 O4.FaceColor = 'interp';
 
-% Make obstacle 5
-O5.Vertices = obst5_V;
-O5.Faces = F_ALL;
-O5.FaceVertexCData = jet(size(obst5_V,1));
-O5.FaceColor = 'interp';
-
-% Make obstacle 6
-O6.Vertices = obst6_V;
-O6.Faces = F_ALL;
-O6.FaceVertexCData = jet(size(obst6_V,1));
-O6.FaceColor = 'interp';
-
-% Make obstacle 7
-O7.Vertices = obst7_V;
-O7.Faces = F_ALL;
-O7.FaceVertexCData = jet(size(obst7_V,1));
-O7.FaceColor = 'interp';
-
-% Make obstacle 8
-O8.Vertices = obst8_V;
-O8.Faces = F_ALL;
-O8.FaceVertexCData = jet(size(obst8_V,1));
-O8.FaceColor = 'interp';
-
 S1Obj = patch(S1);
 S2Obj = patch(S2);
 S3Obj = patch(S3);
@@ -115,10 +91,6 @@ Obst1 = patch(O1);
 Obst2 = patch(O2);
 Obst3 = patch(O3);
 Obst4 = patch(O4);
-Obst5 = patch(O5);
-Obst6 = patch(O6);
-Obst7 = patch(O7);
-Obst8 = patch(O8);
 
 hold off
 axis equal
@@ -222,15 +194,7 @@ for i = 0:1:(theta_points - 1)
                             GJK(S2Obj, Obst3, iterationsAllowed) || ...
                             GJK(S3Obj, Obst3, iterationsAllowed) || ...
                             GJK(S2Obj, Obst4, iterationsAllowed) || ...
-                            GJK(S3Obj, Obst4, iterationsAllowed) || ...
-                            GJK(S2Obj, Obst5, iterationsAllowed) || ...
-                            GJK(S3Obj, Obst5, iterationsAllowed) || ...
-                            GJK(S2Obj, Obst6, iterationsAllowed) || ...
-                            GJK(S3Obj, Obst6, iterationsAllowed) || ...
-                            GJK(S2Obj, Obst7, iterationsAllowed) || ...
-                            GJK(S3Obj, Obst7, iterationsAllowed) || ...
-                            GJK(S2Obj, Obst8, iterationsAllowed) || ...
-                            GJK(S3Obj, Obst8, iterationsAllowed);
+                            GJK(S3Obj, Obst4, iterationsAllowed);
 
             % Mark 1 for collision and leave 0 for no collision
             if collisionFlag
