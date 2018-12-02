@@ -7,6 +7,6 @@ To explore our model, you can redefine obstacles in the workspace (by real geome
 
 Usage: 
 
-Run VoxelPathPlanning.m in Matlab will show our sample data.
+Run VoxelPathPlanning.m in Matlab will show our sample data. (Set a break point before the arduino part if you only want to try the path planning with no robot connected)
 
 Rewrite RobotShapeData.m will redefine obstacles. Value 'startXYZ' in VoxelPathPlanning.m defines the stating location for path planning, and end location is chosen in the UI, both are defined in configuration space and can be changed manually.
