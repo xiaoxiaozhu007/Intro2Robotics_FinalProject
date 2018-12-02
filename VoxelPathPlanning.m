@@ -42,6 +42,24 @@ targetXYZ=SetTarget_Normalized(startXYZ,A,theta_points)% UI input
 [distanceBFS,pathPts] = BreathFastSearch(A,targetXYZ,theta_points,startXYZ);
 vis3DPath(distanceBFS,pathPts,A); % A plot showing the searched path
 
+%% For Video recording only
+% set(gcf, 'Position', get(0, 'Screensize'));
+% Frame_Rate = 60;
+% view(-45,30);
+% grid on;
+% alpha= linspace(-45,135,600); 
+% beta= [linspace(30,90,300),linspace(90,30,300)];
+% for i = 1:600
+%     view(alpha(i),beta(i));
+%     pause(2);
+%     F(i)=getframe(gcf);
+% end
+% 
+% video=VideoWriter('test2.avi','Uncompressed AVI');
+% video.FrameRate = Frame_Rate;
+% open(video);
+% writeVideo(video,F);
+% close(video)
 
 %% Arduino part for robot control %%
 %% Configure to arduino (Change based on your own robots)
