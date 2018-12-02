@@ -1,4 +1,13 @@
-% COLLISIONCHECK  check collision of robot arm and 2 obstacles
+% This code is inspired by the collision check code from Matthew Sheen,
+% We want to provide citation of his original code at his github
+% https://github.com/mws262/MATLAB-GJK-Collision-Detection
+
+% We did a lot of change based on our project which already made this code
+% unique, but the GJK function is still borrowed from Matthew's original
+% design that we kept unchanged.
+% Xinxiang Zhu, 2018
+
+%% COLLISIONCHECK  check collision of robot arm and 2 obstacles
 %   theta_min         - 3 entry array of theta1, theta2, theta3 minimums
 %   theta_max         - 3 entry array of theta1, theta2, theta3 maximums
 %   theta_points      - number of distinct thetas between min and max
@@ -9,7 +18,7 @@
 % Return the collission Map of configureation sapce
 function [collisionMap]=collisionCheck(theta_min, theta_max, theta_points, ...
                            iterationsAllowed, r2, r3, createGraph)
-                       
+%                        
 % Example script for GJK function
 %   Animates two objects on a collision course and terminates animation
 %   when they hit each other. Loads vertex and face data from
@@ -171,13 +180,6 @@ for i = 0:1:(theta_points - 1)
         s_t2 = sin(t2);
         c_t2 = cos(t2);
         
-        % Construct A2 matrix from DH parameters
-%         S2_A = [c_t2, -s_t2, 0, r2 * c_t2;
-%                 s_t2, c_t2,  0, r2 * s_t2;
-%                 0,    0,     1, 0;
-%                 0,    0,     0, 1;        ];
-        %S2_A = [c_t2, -s_t2, 0, (r2-60) * c_t2;
-        %        s_t2, c_t2,  0, (r2-60) * s_t2;
         S2_A = [c_t2, -s_t2, 0, (r2) * c_t2;
                 s_t2, c_t2,  0, (r2) * s_t2;
                 0,    0,     1, 0;

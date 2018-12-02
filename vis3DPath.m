@@ -1,3 +1,5 @@
+% Drawing the selected path at your choice of 3D points scatter plot or 3D
+% voxel plot (slow).
 function []=vis3DPath(distanceBFS,pathPts,A)
 global hlink;
 figure,title('Planned path');

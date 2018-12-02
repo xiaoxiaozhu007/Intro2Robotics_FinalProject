@@ -1,3 +1,11 @@
+% This code is implement a 3D breath fast search.
+% Input: A a 3D array representing collision free configuration space,
+% targetXYZ is targeted location for path planning with format (X,Y,Z),
+% theta_points is the angular resolution
+% startXYZ is the starting location of path
+% Output: distanceBFS is the distance of path for all freespace
+% pathPts is the calculated path
+% Xinxiang, 2018.
 function[distanceBFS,pathPts]=BreathFastSearch(A,targetXYZ,theta_points,startXYZ)
 %% Breath fast search
 freespace = theta_points^3;
@@ -86,15 +94,9 @@ while qP <= qE
     
     % increment queuePointer
     qP = qP+1;
-    
-    %%% update drawing  Comment this out to make the code run fast!
-%     if mod(qP,200)==0
-%         %display(['on qP = ', num2str(qP),' and qE = ',num2str(qE)])
-%         updateBFSplot(distanceBFS,qP)
-%     end
+
 end
-% draw the depth map!
-%updateBFSplot(distanceBFS,qP)
+
 
 % check if there is a path between points!
 if ( (distanceBFS(startXYZ(1), startXYZ(2), startXYZ(3) ) == freespace) ...
@@ -195,29 +197,5 @@ function [currentDirection, ptNext] = ...
     
     ptNext = pt + offsets(currentDirection, :);
 end
-
-% function cost = obsCost(dist)
-%     if dist < 0
-%         cost = 10e8;
-%     else
-%         cost = dist;
-%     end
-% end
-
-%     function updateBFSplot(distanceBFS,qP)
-%         h1 = pcolor(distanceBFS);
-%         set(h1, 'EdgeColor', 'none');
-%         set(gca,'Ydir','reverse')
-%         colorbar
-%         title(['Breadth-First Search, Step ', num2str(qP)])
-%  
-%          m = ceil(max(distanceBFS(:)));
-%          colormap( [0,0,0;
-%          1,1,1;
-%          jet(m)]);
-%          
-%          
-%         drawnow
-
 
 end

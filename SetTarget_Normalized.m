@@ -1,3 +1,4 @@
+% A simple UI input for the target location in the configuration space
 function [targetXYZ]=SetTarget_Normalized(startXYZ,A,theta_points)
         global b1 b2 b3
         figuresize = [1024, 768];

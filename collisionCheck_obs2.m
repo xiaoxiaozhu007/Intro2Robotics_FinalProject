@@ -143,13 +143,7 @@ for i = 0:1:(theta_points - 1)
         s_t2 = sin(t2);
         c_t2 = cos(t2);
         
-        % Construct A2 matrix from DH parameters
-%         S2_A = [c_t2, -s_t2, 0, r2 * c_t2;
-%                 s_t2, c_t2,  0, r2 * s_t2;
-%                 0,    0,     1, 0;
-%                 0,    0,     0, 1;        ];
-        %S2_A = [c_t2, -s_t2, 0, (r2-60) * c_t2;
-        %        s_t2, c_t2,  0, (r2-60) * s_t2;
+
         S2_A = [c_t2, -s_t2, 0, (r2) * c_t2;
                 s_t2, c_t2,  0, (r2) * s_t2;
                 0,    0,     1, 0;
